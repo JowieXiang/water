@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 
 const TOKEN = 'pk.eyJ1Ijoiemhhbmd5dXhpYW5nMTk5MyIsImEiOiJjaXVwejZ4MDYwMDJvMnltdzV0NjZ6N3RzIn0.o3dBvb9OjCHbbp_aJFgz8g';
 
-export default class MapPage extends Component {
+class MapPage extends Component {
 
     state = {
         viewport: {
@@ -34,3 +34,5 @@ export default class MapPage extends Component {
         );
     }
 }
+
+export default MapPage

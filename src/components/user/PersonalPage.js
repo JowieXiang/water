@@ -1,11 +1,12 @@
-import React from 'react'
-import WebsitePanel from './WebsitePanel'
+import React, { Component } from 'react'
+import UserWebsite from './UserWebsite'
 import FriendPanel from './FriendPanel'
-import ProfilePanel from './ProfilePanel'
+import PersonalProfile from './PersonalProfile'
 
 
-const PersonalPage = () => {
-	return (
+class PersonalPage extends Component {
+	render() {
+	 return (
 		<div className='container'>
 			<div className='h1_place_holder'>
 			</div>
@@ -14,10 +15,10 @@ const PersonalPage = () => {
 			</div>
 			<div className='row justify-contents-center'>
 				<div className='col-2'>
-					<ProfilePanel />
+					<PersonalProfile />
 				</div>
 				<div className='col-6 offset-1'>
-					<WebsitePanel />
+					<UserWebsite />
 				</div>
 				<div className='col-2  offset-1'>
 					<FriendPanel />
@@ -25,6 +26,7 @@ const PersonalPage = () => {
 			</div>
 		</div>
 	);
+}
 }
 
 export default PersonalPage

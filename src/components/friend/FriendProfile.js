@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
-class ProfilePanel extends Component {
 
-    render() {
+const FriendProfile = (props) => {
+
         return (
             <div>
                 <div className='row'>
@@ -14,20 +14,13 @@ class ProfilePanel extends Component {
                 </div>
                 <div className='row'>
                     <div className='text-left userProfile'>
-                    <p>{this.props.profile}</p>
+                    
                     </div>
                 </div>
             </div>
         );
-    }
 }
 
-//这里的state指的是reducer里面的state
-const mapStatetoProps=(state)=>{
-    return{
-        photo:state.photo,
-        profile:state.profile
-    }
-}
 
-export default connect(mapStatetoProps)(ProfilePanel)
+
+export default FriendProfile

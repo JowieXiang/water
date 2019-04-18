@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class FriendPanel extends Component {
-	state = {
-		friendList: []
-	}
+const FriendPanel =(props)=> {
 
-	render() {
 		return (
 			<div>
 				<div className='row'>
@@ -22,7 +18,6 @@ class FriendPanel extends Component {
 				</div>
 			</div>
 		);
-	}
 }
 
 export default FriendPanel
