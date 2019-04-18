@@ -8,7 +8,7 @@ class Navbar extends Component {
 			<nav className="navbar navbar-expand-lg navbar-light bg-transparent">
 				<div className='container'>
 					<Link to='/'>
-						<a class='navbar-brand' href="#">Internet Awareness</a>
+						<a class='navbar-brand' href="#">Water.</a>
 					</Link>
 				</div>
 			</nav>
