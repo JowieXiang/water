@@ -26,9 +26,7 @@ class MapPage extends Component {
                 onViewportChange={(viewport) => this.setState({ viewport })}
                 mapStyle="mapbox://styles/zhangyuxiang1993/ciupz8c1300nj2inodvj7pbra"
                 mapboxApiAccessToken={TOKEN}>
-                <div className='search_bar bg-transparent'>
-                    <SearchBar className='search_bar bg-transparent' />
-                </div>
+                <SearchBar />
             </MapGL>
 
         );

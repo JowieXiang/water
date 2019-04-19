@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FriendWebsite from './FriendWebsite'
 import ChatPanel from './ChatPanel'
 import FriendProfile from './FriendProfile'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 class FriendPage extends Component {
 	render() {
@@ -23,7 +23,8 @@ class FriendPage extends Component {
 					<div className='col-2  offset-1'>
 						<ChatPanel />
 					</div>
-				</div>		</div>
+				</div>
+			</div>
 		);
 	}
 }
