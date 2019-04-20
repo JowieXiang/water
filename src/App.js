@@ -24,7 +24,7 @@ class App extends Component {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/logedout' component={LoggedOut} />
-            <Route path="/personalPage" component={PersonalPage} />
+            <Route path="/personalPage/:uid" component={PersonalPage} />
             <Route path="/friendPage" component={FriendPage} />
             <Route path="/websitePage" component={WebsitePage} />
             <Route path="/SearchPage/:search_content" component={SearchPage} />

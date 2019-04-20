@@ -8,7 +8,7 @@ const Navbar = (props) => {
 
 		const { auth,profile } = props;
 		console.log(profile);
-		const links = auth.uid ? <SignedInLinks profile={profile}/> : <SignedOutLinks />;
+		const links = auth.uid ? <SignedInLinks auth = {auth} profile={profile}/> : <SignedOutLinks />;
 		return (
 			<nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
 				<div className='container'>
