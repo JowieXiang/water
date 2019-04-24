@@ -1,8 +1,10 @@
 import React from 'react'
-import {connect} from 'react-redux'
+
 
 const PersonalProfile =(props)=> {
-        return (
+    const {profile}=props.profile;   
+    console.log(props); 
+    return (
             <div>
                 <div className='row'>
                     <h2>profile.</h2>
@@ -13,19 +15,13 @@ const PersonalProfile =(props)=> {
                 </div>
                 <div className='row'>
                     <div className='text-left userProfile'>
-                    <p>{props.profile}</p>
+                    <p>{profile}</p>
                     </div>
                 </div>
             </div>
         );
 }
 
-//这里的state指的是reducer里面的state
-const mapStatetoProps=(state)=>{
-    return{
-        photo:state.photo,
-        profile:state.profile
-    }
-}
 
-export default connect(mapStatetoProps)(PersonalProfile)
+
+export default PersonalProfile

@@ -66,6 +66,12 @@ class SignUp extends Component {
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
+                                    <label htmlFor='profile' class="col-12 col-form-label">Profile</label>
+                                    <div class="col-12">
+                                        <textarea type="profile" className="form-control rounded-0" id="profile" placeholder="Enter profile" onChange={this.handleChange}></textarea>
+                                    </div>
+                                </div>
+                                <div className='form-group row justify-content-center'>
                                     <button type="submit" class="btn btn-outline-info col-sm-4">SIGN UP</button>
                                     <div className='red-text center'>
                                         {authError ? <p>{authError}</p> : null}

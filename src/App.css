@@ -42,6 +42,9 @@
   background-color: black;
   height:100px;
   width:100px;
+  color: white;
+  text-align: center;
+  line-height: 100px;
 }
 
 .friendInstance{

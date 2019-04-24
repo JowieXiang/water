@@ -7,7 +7,7 @@ import { signOut } from '../../store/actions/authActions'
 //注意，由于SignedInLinks是一个funciton，所以要将props导入argument，才能在内部引用
 const SignedInLinks = (props) => {
     const { auth, profile } = props;
-    console.log(props);
+    // console.log(props);
     return (
         <ul className='navbar-nav'>
             <li className='nav-item'>
