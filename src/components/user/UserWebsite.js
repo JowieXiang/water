@@ -3,7 +3,6 @@ import React from 'react'
 
 const UserWebsite = (props) => {
 	const { websites } = props.profile;
-	
 	return (
 		<div>
 			<div className='row'>

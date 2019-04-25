@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import MapGL, { NavigationControl } from 'react-map-gl';
+import MapGL from 'react-map-gl';
 import SearchBar from './SearchBar'
-
+import Markers from './Markers'
 
 const TOKEN = 'pk.eyJ1Ijoiemhhbmd5dXhpYW5nMTk5MyIsImEiOiJjaXVwejZ4MDYwMDJvMnltdzV0NjZ6N3RzIn0.o3dBvb9OjCHbbp_aJFgz8g';
 
 class MapPage extends Component {
+
+
+
 
     state = {
         viewport: {
@@ -20,12 +23,12 @@ class MapPage extends Component {
     render() {
         const { viewport } = this.state;
         return (
-
             <MapGL
                 {...viewport}
                 onViewportChange={(viewport) => this.setState({ viewport })}
                 mapStyle="mapbox://styles/zhangyuxiang1993/ciupz8c1300nj2inodvj7pbra"
                 mapboxApiAccessToken={TOKEN}>
+                <Markers />
                 <SearchBar />
             </MapGL>
 
