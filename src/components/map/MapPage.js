@@ -10,7 +10,7 @@ class MapPage extends Component {
 
 
 
-    state = {
+    state = {  
         viewport: {
             postion: 'absolute',
             width: '100%',
