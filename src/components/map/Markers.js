@@ -30,7 +30,11 @@ const Markers = () => {
         <div className='container' >
             <div className='row  align-items-center' style={{ height: 200 }}>
                 <div className='col-auto mr-auto'>
-                <Marker latitude={45.5017} longitude={-73.5673}> <CityPin size={20} /></Marker>
+                    <Marker
+                        longitude={-73.5673}
+                        latitude={45.5017} >
+                        <CityPin size={20} />
+                    </Marker>
                     {markers && markers.map(marker => { return marker; })}
                     <button className='btn btn-outline-info' onClick={showMarkers} >Map</button>
                 </div>
