@@ -11,7 +11,7 @@ const SearchBar = () => {
                 </div>
                 <Link to="/SearchPage/">
                     <div className="col-auto">
-                        <button className='btn btn-outline-info '>GO</button>
+                        <button className='btn btn-outline-light '>GO</button>
                     </div>
                 </Link>
             </div>
