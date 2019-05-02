@@ -55,34 +55,42 @@ export default class App extends Component {
     }
 
     showMarkers = (e) => {
-        var markers = [];
-        const data = JSON.parse(localStorage.getItem("data"));
-        const ipList = data.map(element => element.ip);//get an array of all the ip address
-        // console.log(data);
-        // console.log(ipList);
-        // 从dbip获得ip地址对应的地理信息
-        for (let ip of ipList) {
-            fetch('http://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((myJson) => {
-                    console.log(myJson);
-                    if (myJson.latitude && myJson.longitude) {
-                        const newCoord = {
-                            latitude: myJson.latitude,
-                            longitude: myJson.longitude,
-                            city: myJson.city,
-                            ipAddress: myJson.ipAddress
-                        };
-                        // console.log(newCoord);
-                        this.setState({
-                            ...this.state,
-                            cityList: [...this.state.cityList, newCoord]
-
-                        })
-                    }
-                });
+        if (localStorage.getItem("data")) {
+            var markers = [];
+            const data = JSON.parse(localStorage.getItem("data"));
+            // const ipList = data.map(element => element.ip);//get an array of all the ip address
+            // console.log(data);
+            // console.log(ipList);
+            // 从dbip获得ip地址对应的地理信息
+            for (let dt of data) {
+                var ip = dt.ip;
+                var domain = dt.domain;
+                fetch('http://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((myJson) => {
+                        console.log(myJson);
+                        if (myJson.latitude && myJson.longitude) {
+                            const newCoord = {
+                                latitude: myJson.latitude,
+                                longitude: myJson.longitude,
+                                country: myJson.countryName,
+                                state: myJson.stateProv,
+                                city: myJson.city,
+                                ipAddress: myJson.ipAddress,
+                                domain: domain
+                            };
+                            // console.log(newCoord);
+                            this.setState({
+                                ...this.state,
+                                cityList: [...this.state.cityList, newCoord]
+                            })
+                        }
+                    });
+            }
+        }else{
+            alert("Ooops, there's no ip address yet.\nKeep the map tab and open some new tabs in the browser.\nThen try again!~")
         }
     }
 
