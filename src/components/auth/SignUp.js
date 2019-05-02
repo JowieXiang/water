@@ -43,36 +43,36 @@ class SignUp extends Component {
                             <form onSubmit={this.handleSubmit} className='col-6'>
                                 <div className='form-group row justify-content-center' >
                                     <label htmlFor='firstName' class="col-lg-3 col-form-label">First Name</label>
-                                    <div class="col-lg-9">
-                                        <input type="firstName" class="form-control" id="firstName" placeholder="Enter first name" onChange={this.handleChange}></input>
+                                    <div className="col-lg-9">
+                                        <input type="firstName" className="form-control" id="firstName" placeholder="Enter first name" onChange={this.handleChange}></input>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center' >
-                                    <label htmlFor='lastName' class="col-lg-3 col-form-label">Last Name</label>
-                                    <div class="col-lg-9">
-                                        <input type="lastName" class="form-control" id="lastName" placeholder="Enter last name" onChange={this.handleChange}></input>
+                                    <label htmlFor='lastName' className="col-lg-3 col-form-label">Last Name</label>
+                                    <div className="col-lg-9">
+                                        <input type="lastName" className="form-control" id="lastName" placeholder="Enter last name" onChange={this.handleChange}></input>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center' >
-                                    <label htmlFor='email' class="col-lg-3 col-form-label">Email</label>
-                                    <div class="col-lg-9">
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" onChange={this.handleChange}></input>
+                                    <label htmlFor='email' className="col-lg-3 col-form-label">Email</label>
+                                    <div className="col-lg-9">
+                                        <input type="email" className="form-control" id="email" placeholder="Enter email" onChange={this.handleChange}></input>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <label htmlFor='password' class="col-lg-3 col-form-label">Password</label>
-                                    <div class="col-lg-9">
-                                        <input type="password" class="form-control" id="password" placeholder="Enter password" onChange={this.handleChange}></input>
+                                    <label htmlFor='password' className="col-lg-3 col-form-label">Password</label>
+                                    <div className="col-lg-9">
+                                        <input type="password" className="form-control" id="password" placeholder="Enter password" onChange={this.handleChange}></input>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <label htmlFor='profile' class="col-12 col-form-label">Profile</label>
-                                    <div class="col-12">
+                                    <label htmlFor='profile' className="col-12 col-form-label">Profile</label>
+                                    <div className="col-12">
                                         <textarea type="profile" className="form-control rounded-0" id="profile" placeholder="Enter profile" onChange={this.handleChange}></textarea>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <button type="submit" class="btn btn-outline-info col-sm-4">SIGN UP</button>
+                                    <button type="submit" className="btn btn-outline-info col-sm-4">SIGN UP</button>
                                     <div className='red-text center'>
                                         {authError ? <p>{authError}</p> : null}
                                     </div>

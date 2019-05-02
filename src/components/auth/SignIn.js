@@ -44,19 +44,19 @@ class SignIn extends Component {
                         <div className='row justify-content-center'>
                             <form onSubmit={this.handleSubmit} className='col-6'>
                                 <div className='form-group row justify-content-center' >
-                                    <label htmlFor='email' class="col-lg-3 col-form-label">Email</label>
-                                    <div class="col-lg-9">
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" onChange={this.handleChange}></input>
+                                    <label htmlFor='email' className="col-lg-3 col-form-label">Email</label>
+                                    <div className="col-lg-9">
+                                        <input type="email" className="form-control" id="email" placeholder="Enter email" onChange={this.handleChange}></input>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <label htmlFor='password' class="col-lg-3 col-form-label">Password</label>
-                                    <div class="col-lg-9">
-                                        <input type="password" class="form-control" id="password" placeholder="Enter password" onChange={this.handleChange}></input>
+                                    <label htmlFor='password' className="col-lg-3 col-form-label">Password</label>
+                                    <div className="col-lg-9">
+                                        <input type="password" className="form-control" id="password" placeholder="Enter password" onChange={this.handleChange}></input>
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <button type="submit" class="btn btn-outline-info col-sm-4">Login</button>
+                                    <button type="submit" className="btn btn-outline-info col-sm-4">Login</button>
                                     <div className='red-text center'>
                                         {authError ? <p>{authError}</p> : null}
                                     </div>

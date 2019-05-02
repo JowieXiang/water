@@ -19,7 +19,7 @@ const store = createStore(rootReducer,
         reduxFirestore(fbConfig),
         //attachAuthIsReady: true 用于规定用户登陆状态下，每次刷新页面都直接到页面内
         //useFirestoreForProfile: true,userProfile:'users'这两个用来将firestore中与firebase的id相同的item导入firebase的profile中
-        reactReduxFirebase(fbConfig, { useFirestoreForProfile: true,userProfile:'users',attachAuthIsReady: true })
+        reactReduxFirebase(fbConfig, { useFirestoreForProfile: true,userProfile:'userData',attachAuthIsReady: true })
     )
 );
 

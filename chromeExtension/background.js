@@ -5,14 +5,19 @@ let homePageTab = -1;//存储homepage的tabId
 const homeUrl = 'http://localhost:3000/'; // homepage地址
 
 
-//每次网页加载时将ip载入ipList
+//每次网页加载时将tabItem载入tabList
 chrome.webRequest.onCompleted.addListener((details) => {
 	//如果访问页面为homepage，则设定homePageTab
 	if (details.url == homeUrl) {
 		homePageTab = details.tabId;
 	} else {
+		//把所有tabItem中的ip都导入一个数组
+		var ipList = [];
+		if(tabList.length>0){
+		ipList = tabList.map(element => { return element.ip });
+		}
 		//把网页detail中的url条目赋值给ip	
-		if (details.url && details.ip) {
+		if (details.url && details.ip && ipList.includes(details.ip) == false) {
 			tabItem = {
 				tabId: details.tabId,
 				ip: details.ip,
@@ -55,7 +60,7 @@ chrome.tabs.onUpdated.addListener((tab) => {
 	// chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, (tabs)=>{
 	// 	console.log(tabs);
 	// })
-		sendMessage();
+	sendMessage();
 
 })
 

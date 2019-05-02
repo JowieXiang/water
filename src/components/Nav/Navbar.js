@@ -12,8 +12,7 @@ const Navbar = (props) => {
 		return (
 			<nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
 				<div className='container'>
-					<Link to='/'>
-						<a className='navbar-brand' style={{color:"white"}} href="#">Water.</a>
+					<Link to='/'className='navbar-brand' style={{color:"white"}} href="#">Water.
 					</Link>
 					<div className="navbar-collapse justify-content-end" >
 						{links}

@@ -11,13 +11,11 @@ const SignedInLinks = (props) => {
     return (
         <ul className='navbar-nav'>
             <li className='nav-item'>
-                <NavLink to={'/personalPage/'+auth.uid} >
-                    <a class="nav-link" style={{color:"white"}}>{profile.initials}</a>
+                <NavLink to={'/personalPage/'+auth.uid} className="nav-link" style={{color:"white"}}>{profile.initials}
                 </NavLink>
             </li>
             <li className='nav-item'>
-                <NavLink to='/logedout'>
-                    <a class="nav-link" style={{color:"white"}} onClick={props.signOut}>Log Out</a>
+                <NavLink to='/logedout' className="nav-link" style={{color:"white"}} onClick={props.signOut}>Log Out
                 </NavLink>
             </li>
         </ul>

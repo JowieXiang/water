@@ -5,11 +5,13 @@ import MapGL, { Marker, Popup } from 'react-map-gl';
 import CityPin from './city-pin';
 import SearchBar from './SearchBar';
 import CityInfo from './city-info';
+import { connect } from 'react-redux'
+import { addWebsiteList } from '../../store/actions/mapActions'
 
 
 const TOKEN = 'pk.eyJ1Ijoiemhhbmd5dXhpYW5nMTk5MyIsImEiOiJjaXVwejZ4MDYwMDJvMnltdzV0NjZ6N3RzIn0.o3dBvb9OjCHbbp_aJFgz8g'; // Set your mapbox token here
 
-export default class App extends Component {
+class MapPage extends Component {
 
 
     constructor(props) {
@@ -22,7 +24,7 @@ export default class App extends Component {
                 bearing: 0,
                 pitch: 0
             },
-            cityList: [
+            websiteList: [
             ],
             popupInfo: null
         };
@@ -56,8 +58,13 @@ export default class App extends Component {
 
     showMarkers = (e) => {
         if (localStorage.getItem("data")) {
-            var markers = [];
+
             const data = JSON.parse(localStorage.getItem("data"));
+            //清空上一次调用showMarkers时state中存储的websiteList
+            this.setState({
+                ...this.state,
+                websiteList: []
+            });
             // const ipList = data.map(element => element.ip);//get an array of all the ip address
             // console.log(data);
             // console.log(ipList);
@@ -72,27 +79,96 @@ export default class App extends Component {
                     .then((myJson) => {
                         console.log(myJson);
                         if (myJson.latitude && myJson.longitude) {
-                            const newCoord = {
+                            const newWebsite = {
                                 latitude: myJson.latitude,
                                 longitude: myJson.longitude,
                                 country: myJson.countryName,
                                 state: myJson.stateProv,
                                 city: myJson.city,
                                 ipAddress: myJson.ipAddress,
-                                domain: domain
+                                domain: domain,
+                                savedTime: new Date()
                             };
-                            // console.log(newCoord);
+                            // console.log(newWebsite);
                             this.setState({
                                 ...this.state,
-                                cityList: [...this.state.cityList, newCoord]
+                                websiteList: [...this.state.websiteList, newWebsite]
                             })
+                        } else {
+                            alert("Can't find corresponding servers of domain:" + domain +
+                                "\n ip address:" + ip);
                         }
                     });
             }
-        }else{
+        } else {
             alert("Ooops, there's no ip address yet.\nKeep the map tab and open some new tabs in the browser.\nThen try again!~")
         }
     }
+
+    showAndSaveMarkers = () => {
+        if (localStorage.getItem("data")) {
+
+            const data = JSON.parse(localStorage.getItem("data"));
+            //清空上一次调用showMarkers时state中存储的websiteList
+            this.setState({
+                ...this.state,
+                websiteList: []
+            });
+            // const ipList = data.map(element => element.ip);//get an array of all the ip address
+            // console.log(data);
+            // console.log(ipList);
+            // 从dbip获得ip地址对应的地理信息
+            for (let dt of data) {
+                //记录遍历的项目数量
+                var counter =0;
+                var ip = dt.ip;
+                var domain = dt.domain;
+                fetch('http://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((myJson) => {
+                        // console.log(myJson);
+                        counter++;
+                        var newWebsite = {};
+                        if (myJson.latitude && myJson.longitude) {
+                            newWebsite = {
+                                latitude: myJson.latitude,
+                                longitude: myJson.longitude,
+                                country: myJson.countryName,
+                                state: myJson.stateProv,
+                                city: myJson.city,
+                                ipAddress: myJson.ipAddress,
+                                domain: domain,
+                                savedTime: new Date()
+                            };
+                            // console.log(newWebsite);
+                            this.setState({
+                                ...this.state,
+                                websiteList: [...this.state.websiteList, newWebsite]
+                            })
+                        } else {
+                            alert("Can't find corresponding servers of domain:" + domain +
+                                "\n ip address:" + ip);
+                        }
+                        return this.state.websiteList;
+                    })
+                    .then((websiteList) => {
+                        //如果从dbip获得了数据，则将数据载入firestore中的webList
+                        if (counter==data.length) {
+                            this.props.dispatch(addWebsiteList(websiteList));
+                        }
+                    });
+            }
+        } else {
+            alert("Ooops, there's no ip address yet.\nKeep the map tab and open some new tabs in the browser.\nThen try again!~")
+        }
+        // console.log(this.state.websiteList);
+        // {connect}已经自动将dispatch功能传入this.props内，因此可以直接调用
+        // this.props.dispatch(addWebsiteList(this.state.websiteList));
+
+    }
+
 
     _renderPopup() {
         const { popupInfo } = this.state;
@@ -109,6 +185,7 @@ export default class App extends Component {
     }
 
     render() {
+        const { auth } = this.props;
         const { viewport } = this.state;
         return (
 
@@ -120,14 +197,21 @@ export default class App extends Component {
                 onViewportChange={this._updateViewport}
                 mapboxApiAccessToken={TOKEN} >
 
-                {this.state.cityList.map(this._renderCityMarker)}
+                {this.state.websiteList.map(this._renderCityMarker)}
                 {this._renderPopup()}
 
                 <SearchBar />
                 <div className='container' >
-                    <div className='row  align-items-center' style={{ height: 200 }}>
+                    <div className='h1_place_holder'>
+                    </div>
+                    <div className='row  align-items-center' style={{ height: 60 }}>
                         <div className='col-auto mr-auto'>
-                            <button className='btn btn-outline-light' onClick={this.showMarkers}>Map</button>
+                            <button className='btn btn-outline-light' onClick={this.showMarkers}>show</button>
+                        </div>
+                    </div>
+                    <div className='row  align-items-center' style={{ height: 60 }}>
+                        <div className='col-auto mr-auto'>
+                            {auth.uid ? <button className='btn btn-outline-light' onClick={this.showAndSaveMarkers}>show and save</button> : null}
                         </div>
                     </div>
                 </div>
@@ -136,6 +220,11 @@ export default class App extends Component {
     }
 }
 
-export function renderToDom(container) {
-    render(<App />, container);
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    };
 }
+
+
+export default connect(mapStateToProps)(MapPage)
