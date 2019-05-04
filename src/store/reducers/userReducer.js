@@ -5,7 +5,7 @@
 const initState = {
 }
 
-const mapReducer = (state = initState, action) => {
+const userReducer = (state = initState, action) => {
     switch (action.type) {
         case 'ADD_WEBSITELIST':
             // console.log('created project')
@@ -17,6 +17,7 @@ const mapReducer = (state = initState, action) => {
         default:
             return state;
     }
+    return state;
 }
 
-export default mapReducer
+export default userReducer

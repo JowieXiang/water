@@ -36,15 +36,15 @@ export const signUp = (newUser) => {
             newUser.password
         ).then((resp) => {
             //在firestore内创建一个新的doc，其id与firebase中的用户id相同
-            firestore.collection('userData').doc(resp.user.uid).set({
+            firestore.collection('userProfile').doc(resp.user.uid).set({
                 firstName: newUser.firstName,
                 lastName: newUser.lastName,
                 initials: newUser.firstName[0] + newUser.lastName[0],
-                profile: newUser.profile,
-                websiteList: "",
-                friendList:""
+                profile: newUser.profile
             });
-
+            //在firestore内创建一个新的doc，其id与firebase中的用户id相同
+            firestore.collection('userWebsites').doc(resp.user.uid).set({
+            });
         }).then(() => {
             dispatch({ type: 'SIGNUP_SUCCESS' })
         }).catch(err => {
