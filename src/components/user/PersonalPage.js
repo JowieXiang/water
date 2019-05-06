@@ -8,7 +8,7 @@ import CategoricalBoard from './boards/CategoricalBoard'
 import SocialBoard from './boards/SocialBoard'
 import TimeBoard from './boards/TimeBoard'
 import WelcomeBoard from './boards/WelcomeBoard'
-
+import WebsiteList from './websites/WebsiteList'
 import Sidebar from './Sidebar';
 import { Redirect, Route, Switch } from 'react-router-dom'
 
@@ -28,7 +28,7 @@ class PersonalPage extends Component {
 			userDoc = userWebsitesCollection.find(element => {
 				return element.id === auth.uid;
 			});
-		} 
+		}
 		//route guard
 		if (!auth.uid) return <Redirect to='/' />
 
@@ -65,15 +65,20 @@ class PersonalPage extends Component {
 							<Route
 								path={'/personalPage/' + uid + '/where'}
 								render={(routeProps) => (
-									<GeographicalBoard {...routeProps} auth={auth}  userDoc={userDoc ? userDoc : null}/>
+									<GeographicalBoard {...routeProps} auth={auth} userDoc={userDoc ? userDoc : null} />
 								)} />
 							<Route path={'/personalPage/' + uid + '/what'} component={CategoricalBoard} />
 							<Route path={'/personalPage/' + uid + '/when'} component={TimeBoard} />
 							<Route path={'/personalPage/' + uid + '/friends'} component={SocialBoard} />
 						</Switch>
+						{(userDoc && userDoc.websiteList.length > 0) ? 
+							<WebsiteList webList={userDoc.websiteList} />: null
+						}
 					</div>
-
 				</div>
+
+
+
 			</div>
 		);
 	}

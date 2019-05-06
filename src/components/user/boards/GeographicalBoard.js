@@ -61,12 +61,9 @@ const GeographicalBoard = (props) => {
 		<div>
 			<div className='row'>
 				<div className='col-12'>
-					<div className=" card card border-white text-white bg-transparent" >
-						<div className="card-body">
-							<h3 className="card-title">Geographic Footprint</h3>
-							<p className="card-text">how many Cities.how many Cities.how many Citieshow many Cities.how many Cities.how many Cities.how many Cities.how many Cities</p>
-						</div>
-					</div>
+					<h2 className="text-white">Geographic Footprint</h2>
+					<br />
+					<p className="text-white">how many Cities.how many Cities.how many Citieshow many Cities.how many Cities.how many Cities.how many Cities.how many Cities</p>
 				</div>
 			</div>
 			<br />
