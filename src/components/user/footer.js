@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="page-footer font-small blue pt-4">
+        <footer className="page-footer font-small blue pt-4" style={{color: "#82ca9d" ,borderTop:"1px dashed #82ca9d",marginTop:100}}>
 
             {/* <!-- Footer Links --> */}
             <div className="container-fluid text-center text-md-left">
@@ -15,8 +15,8 @@ const Footer = () => {
                     <div className="col-md-6 mt-md-0 mt-3">
 
                         {/* <!-- Content --> */}
-                        <h5 className="text-uppercase">Footer Content</h5>
-                        <p>Here you can use rows and columns to organize your footer content.</p>
+                        <h5 className="text-uppercase" >Water.</h5>
+                        <p>fostering Internet awareness.</p>
 
                     </div>
                     {/* <!-- Grid column --> */}
@@ -31,16 +31,16 @@ const Footer = () => {
 
                             <ul className="list-unstyled">
                                 <li>
-                                    <a href="#!">Link 1</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}>Link 1</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Link 2</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}>Link 2</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Link 3</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}style={{ color: "#82ca9d" }}style={{ color: "#82ca9d" }}>Link 3</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Link 4</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}>Link 4</a>
                                 </li>
                             </ul>
 
@@ -55,16 +55,16 @@ const Footer = () => {
 
                             <ul className="list-unstyled">
                                 <li>
-                                    <a href="#!">Link 1</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}style={{ color: "#82ca9d" }}>Link 1</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Link 2</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}style={{ color: "#82ca9d" }}>Link 2</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Link 3</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}style={{ color: "#82ca9d" }}>Link 3</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Link 4</a>
+                                    <a href="#!" style={{ color: "#82ca9d" }}style={{ color: "#82ca9d" }}>Link 4</a>
                                 </li>
                             </ul>
 
@@ -78,8 +78,8 @@ const Footer = () => {
                 {/* <!-- Footer Links --> */}
 
                 {/* <!-- Copyright --> */}
-                <div className="footer-copyright text-center py-3">© 2018 Copyright:
-  <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+                <div className="footer-copyright text-center py-3"> Copyright ©
+  <a href="//zhangzhangzhang.space" style={{ color: "#82ca9d" }}> Zhang Yuxiang & Zhao Jiaxi </a>
                 </div>
                 {/* <!-- Copyright --> */}
 

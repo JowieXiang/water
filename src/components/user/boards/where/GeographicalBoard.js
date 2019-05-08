@@ -2,6 +2,7 @@
 import React from 'react'
 import CountryPanel from './CountryPanel'
 import VerticalBarChart from './VerticalBarChart'
+import icons from 'glyphicons'
 
 
 const GeographicalBoard = (props) => {
@@ -51,12 +52,14 @@ const GeographicalBoard = (props) => {
 
 
 	return (
-		<div>
+		<div style={{ color: "#82ca9d" }}>
 			<div className='row'>
-				<div className='col-12'>
-					<h2 className="text-white" style={{ color: "white" }}>Geographic Footprint</h2>
+				<div className='col-12' >
+					<h2 >GEOGRAPHICS | 地理数据</h2>
 					<br />
-					<p className="text-white">how many Cities.how many Cities.how many Citieshow many Cities.how many Cities.how many Cities.how many Cities.how many Cities</p>
+					<p>This chart shows the number of visits you have paid to servers located in these countries respectively.<br />
+						下表显示你曾访问了哪些国家互联网服务器，以及访问的次数。
+					</p>
 				</div>
 			</div>
 			<br />
@@ -66,8 +69,8 @@ const GeographicalBoard = (props) => {
 				</div>
 			</div>
 			<br />
-			<div className='row' style={{color:"#82ca9d"}}>
-				<h3>LIST OF WEBSITES.</h3>
+			<div className='row'>
+				<h4>LIST OF WEBSITES | 网站列表</h4>
 			</div>
 			{sortedWebList ? Object.values(sortedWebList).map(countryList => {
 				return <CountryPanel countryList={countryList} />;

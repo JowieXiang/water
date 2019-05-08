@@ -39,8 +39,8 @@
 
 .websiteInstance{
   border-radius: 50%;
-  border: 1px solid  #82ca9d;
-  /* background-color: #82ca9d; */
+  /* border: 1px solid  #82ca9d; */
+  background-color: #82ca9d;
   height:40px;
   width:40px;
   text-align: center;
@@ -99,3 +99,11 @@
   width:10px;
 }
 
+.country-panel{
+  transition: 0.5s;
+  color:#82ca9d;
+}
+.country-panel:hover{
+  background-color:white;
+  color:black;
+}

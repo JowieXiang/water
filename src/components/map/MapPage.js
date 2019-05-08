@@ -204,10 +204,10 @@ class MapPage extends Component {
                 <div className='container' >
                     <div className="row fixed-bottom align-items-center justify-content-center" style={{ height: 60 }}>
                         <div className='col-auto'>
-                            <button className='btn btn-outline-light' onClick={this.showMarkers}>show</button>
+                            <button className='btn btn-outline-success' onClick={this.showMarkers}>show</button>
                         </div>
                         <div className='col-auto'>
-                            {auth.uid ? <button className='btn btn-outline-light' onClick={this.showAndSaveMarkers}>show and save</button> : null}
+                            {auth.uid ? <button className='btn btn-outline-success' onClick={this.showAndSaveMarkers}>show and save</button> : null}
                         </div>
                     </div>
                 </div>

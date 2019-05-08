@@ -35,7 +35,7 @@ const VerticalBarChart = (props) => {
                 <YAxis className="text-white" tick={{ fill: "#82ca9d" }} dataKey="key" type="category" />
                 {/* <Tooltip content= {<CustomTooltip />}  /> */}
                 {/* <Legend /> */}
-                <Bar dataKey="frequency" barSize={20} fill="#82ca9d" />
+                <Bar dataKey="frequency" barSize={20} fill="white" />
                 {/* <Bar dataKey="uv" barSize={20} fill="#413ea0" /> */}
 
                 {/* <Line dataKey="pv" stroke="#8884d8" />

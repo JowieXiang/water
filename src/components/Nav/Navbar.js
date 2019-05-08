@@ -10,9 +10,9 @@ const Navbar = (props) => {
 		// console.log(profile);
 		const links = auth.uid ? <SignedInLinks auth = {auth} profile={profile}/> : <SignedOutLinks />;
 		return (
-			<nav className="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+			<nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor: "rgba(0, 0, 0, 0.5)",color: "#82ca9d"}} >
 				<div className='container'>
-					<Link to='/'className='navbar-brand' style={{color:"white"}} href="#">Water.
+					<Link to='/'className='navbar-brand' style={{ color: "#82ca9d" }} href="#">Water.
 					</Link>
 					<div className="navbar-collapse justify-content-end" >
 						{links}
