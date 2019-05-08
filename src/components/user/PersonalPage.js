@@ -3,15 +3,15 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import UserWebsite from './UserWebsite'
-import GeographicalBoard from './boards/GeographicalBoard'
-import CategoricalBoard from './boards/CategoricalBoard'
-import SocialBoard from './boards/SocialBoard'
-import TimeBoard from './boards/TimeBoard'
-import WelcomeBoard from './boards/WelcomeBoard'
-import WebsiteList from './websites/WebsiteList'
+import GeographicalBoard from './boards/where/GeographicalBoard'
+import CategoricalBoard from './boards/what/CategoricalBoard'
+import SocialBoard from './boards/friends/SocialBoard'
+import TimeBoard from './boards/when/TimeBoard'
+import WelcomeBoard from './boards//welcome/WelcomeBoard'
+// import WebsiteList from './websites/WebsiteList'
 import Sidebar from './Sidebar';
 import { Redirect, Route, Switch } from 'react-router-dom'
-
+import Footer from './footer'
 
 class PersonalPage extends Component {
 
@@ -29,6 +29,8 @@ class PersonalPage extends Component {
 				return element.id === auth.uid;
 			});
 		}
+
+
 		//route guard
 		if (!auth.uid) return <Redirect to='/' />
 
@@ -59,7 +61,7 @@ class PersonalPage extends Component {
 					<div className="col-2">
 						<Sidebar uid={uid} />
 					</div>
-					<div className="col-10">
+					<div className="col-8">
 						<Switch>
 							<Route exact path={'/personalPage/' + uid} component={WelcomeBoard} />
 							<Route
@@ -71,12 +73,12 @@ class PersonalPage extends Component {
 							<Route path={'/personalPage/' + uid + '/when'} component={TimeBoard} />
 							<Route path={'/personalPage/' + uid + '/friends'} component={SocialBoard} />
 						</Switch>
-						{(userDoc && userDoc.websiteList.length > 0) ? 
-							<WebsiteList webList={userDoc.websiteList} />: null
-						}
+						{/* {(userDoc && userDoc.websiteList.length > 0) ?
+							<WebsiteList webList={userDoc.websiteList} /> : null
+						} */}
 					</div>
 				</div>
-
+				<Footer />
 
 
 			</div>

@@ -39,9 +39,9 @@
 
 .websiteInstance{
   border-radius: 50%;
-  background-color: black;
-  height:100px;
-  width:100px;
+  background-color: #82ca9d;
+  height:30px;
+  width:30px;
   color: white;
   text-align: center;
   line-height: 100px;

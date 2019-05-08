@@ -9,21 +9,27 @@ class WebsiteInfo extends Component {
 
     render() {
         const { siteInfo } = this.props;
+        // console.log(siteInfo.savedTime);
         const toggleDetail = () => {
             console.log('showing detail');
             this.setState({
                 showDetail: !this.state.showDetail
             })
-        }
+        }   
+
 
         return (
-            <div className="">
-                <h5 className="" onClick={toggleDetail}>· {siteInfo.domain}</h5>
+            <div className="bg-white text-black" style={{padding:10,borderRadius:"5px"}}>
+                <p className="" style={{float:"left"}} onClick={toggleDetail}><strong> {siteInfo.domain.split(".")[1]}</strong> </p>
+                <div style={{float:"right"}}> {siteInfo.savedTime.toDate().toString()} </div>
+                <div style={{clear:"both"}}></div>
                 {this.state.showDetail ?
                     <div>
+                        <p className="">{siteInfo.domain}</p>
                         <p className="">{siteInfo.city}, {siteInfo.country}</p>
                         <p className="">{siteInfo.latitude}, {siteInfo.longitude}</p>
-                        <p className=""></p>
+                        <p className="">{siteInfo.ipAddress}</p>
+
                     </div>
                     :
                     null
