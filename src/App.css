@@ -40,11 +40,19 @@
 .websiteInstance{
   border-radius: 50%;
   background-color: #82ca9d;
-  height:30px;
-  width:30px;
-  color: white;
+  height:40px;
+  width:40px;
   text-align: center;
-  line-height: 100px;
+  font-size: 17pt;
+  /* line-height: 100px; */
+}
+.dot{
+  border-radius: 50%;
+  background-color: #82ca9d;
+  height:10px;
+  width:10px;
+  text-align: center;
+  /* line-height: 100px; */
 }
 
 .friendInstance{
@@ -89,3 +97,4 @@
   height:10px;
   width:10px;
 }
+

@@ -5,6 +5,8 @@ import {
 } from 'recharts';
 import CountryPanel from './CountryPanel'
 
+
+
 const GeographicalBoard = (props) => {
 
 	var sortedWebList = {};
@@ -119,12 +121,14 @@ const GeographicalBoard = (props) => {
 		}
 		return { mfItem: item, times: mf };
 	}
-	return (
 
+
+	
+	return (
 		<div>
 			<div className='row'>
 				<div className='col-12'>
-					<h2 className="text-white">Geographic Footprint</h2>
+					<h2 className="text-white" style={{ color: "white" }}>Geographic Footprint</h2>
 					<br />
 					<p className="text-white">how many Cities.how many Cities.how many Citieshow many Cities.how many Cities.how many Cities.how many Cities.how many Cities</p>
 				</div>

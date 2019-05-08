@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import MapGL, { Marker, Popup } from 'react-map-gl';
 
 import CityPin from './city-pin';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 import CityInfo from './city-info';
 import { connect } from 'react-redux'
 import { addWebsiteList } from '../../store/actions/mapActions'
@@ -120,7 +120,7 @@ class MapPage extends Component {
             // 从dbip获得ip地址对应的地理信息
             for (let dt of data) {
                 //记录遍历的项目数量
-                var counter =0;
+                var counter = 0;
                 var ip = dt.ip;
                 var domain = dt.domain;
                 fetch('http://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
@@ -155,7 +155,7 @@ class MapPage extends Component {
                     })
                     .then((websiteList) => {
                         //如果从dbip获得了数据，则将数据载入firestore中的webList
-                        if (counter==data.length) {
+                        if (counter == data.length) {
                             this.props.dispatch(addWebsiteList(websiteList));
                         }
                     });
@@ -200,17 +200,13 @@ class MapPage extends Component {
                 {this.state.websiteList.map(this._renderCityMarker)}
                 {this._renderPopup()}
 
-                <SearchBar />
+                {/* <SearchBar /> */}
                 <div className='container' >
-                    <div className='h1_place_holder'>
-                    </div>
-                    <div className='row  align-items-center' style={{ height: 60 }}>
-                        <div className='col-auto mr-auto'>
+                    <div className="row fixed-bottom align-items-center justify-content-center" style={{ height: 60 }}>
+                        <div className='col-auto'>
                             <button className='btn btn-outline-light' onClick={this.showMarkers}>show</button>
                         </div>
-                    </div>
-                    <div className='row  align-items-center' style={{ height: 60 }}>
-                        <div className='col-auto mr-auto'>
+                        <div className='col-auto'>
                             {auth.uid ? <button className='btn btn-outline-light' onClick={this.showAndSaveMarkers}>show and save</button> : null}
                         </div>
                     </div>
