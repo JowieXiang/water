@@ -25,10 +25,10 @@ class CountryPanel extends Component {
                 <div className="col-12">
                     <br />
                 </div>
-                <div className="col-12" style={{ padding: 10, borderRadius: "5px" }}>
+                <div className="col-12 text-white" style={{ padding: 10, borderRadius: "5px" }}>
                     <div className='row'>
-                        <div className="col-12 text-white" style={{ backgroundColor: "#82ca9d", borderRadius: 3 }}>
-                            <p className="my-auto" style={{ float: "left" }} onClick={toggleDetail}>
+                        <div className="col-12" style={{ borderTop: "1px dashed #82ca9d"}}>
+                            <p className="my-auto" style={{ float: "left",color:"#82ca9d" }} onClick={toggleDetail}>
                                 {icons.dot}
                                 <strong> {countryList[0].country}</strong>
                             </p>
@@ -37,17 +37,17 @@ class CountryPanel extends Component {
                         <div style={{ clear: "both" }}></div>
                     </div>
                     {this.state.showDetail ?
-                        <div className='row justify-contents-center'>
+                        <div className='row justify-contents-center '>
                             {(countryList && countryList.length > 0) && countryList.map(website => {
                                 return (
-                                    <div className='col-2 align-self-center' style={{ height: 200, margin: 5 }}>
-                                        <div class="card card-block h-200 align-items-center">
-                                            <h3>Card</h3>
-                                            <div className="websiteInstance">
-                                                <p>{website.domain.split(".")[1].charAt(0)}</p>
+                                    <div className='col-1 justify-content-center ' style={{ height: 100, margin: 5}}>
+                                        <div className="mx-auto" style={{ margin: 25 }}>
+                                            <div className="websiteInstance mx-auto" title={website.domain.split(".")[1]+'.'+website.domain.split(".")[2]}>
+                                                <a style={{color:"#82ca9d"}} href={"//"+website.domain}>{website.domain.split(".")[1].charAt(0)}</a>
                                             </div>
+                                            {/* <p className="mx-auto">{website.domain.split(".")[1]}.{website.domain.split(".")[2]}</p> */}
                                         </div>
-                                        {/* <p>{website.domain.split(".",2)}</p> */}
+
                                     </div>
                                 )
                             }
