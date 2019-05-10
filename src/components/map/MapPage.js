@@ -7,7 +7,7 @@ import CityPin from './city-pin';
 import CityInfo from './city-info';
 import { connect } from 'react-redux'
 import { addWebsiteList } from '../../store/actions/mapActions'
-
+import BeginModal from '../modal/BeginModal'
 
 const TOKEN = 'pk.eyJ1Ijoiemhhbmd5dXhpYW5nMTk5MyIsImEiOiJjaXVwejZ4MDYwMDJvMnltdzV0NjZ6N3RzIn0.o3dBvb9OjCHbbp_aJFgz8g'; // Set your mapbox token here
 
@@ -184,11 +184,14 @@ class MapPage extends Component {
         );
     }
 
+    componentDidMount = () => {
+
+    }
+
     render() {
         const { auth } = this.props;
         const { viewport } = this.state;
         return (
-
             <MapGL
                 {...viewport}
                 width="100%"
@@ -196,11 +199,10 @@ class MapPage extends Component {
                 mapStyle="mapbox://styles/mapbox/dark-v9"
                 onViewportChange={this._updateViewport}
                 mapboxApiAccessToken={TOKEN} >
-
                 {this.state.websiteList.map(this._renderCityMarker)}
                 {this._renderPopup()}
-
                 {/* <SearchBar /> */}
+
                 <div className='container' >
                     <div className="row fixed-bottom align-items-center justify-content-center" style={{ height: 60 }}>
                         <div className='col-auto'>
@@ -212,6 +214,7 @@ class MapPage extends Component {
                     </div>
                 </div>
             </MapGL>
+
         );
     }
 }
