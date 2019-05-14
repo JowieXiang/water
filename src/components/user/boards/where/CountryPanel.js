@@ -39,8 +39,8 @@ class CountryPanel extends Component {
                                 return (
                                     <div className='col-1 justify-content-center ' style={{ height: 50, margin: 5}}>
                                         <div className="mx-auto" style={{ margin: 10 }}>
-                                            <div className="websiteInstance mx-auto" title={website.domain.split(".")[1]+'.'+website.domain.split(".")[2]}>
-                                                <a style={{color:"black"}} href={"//"+website.domain}>{website.domain.split(".")[1].charAt(0)}</a>
+                                            <div className="websiteBtn" title={website.domain.split(".")[1]+'.'+website.domain.split(".")[2]}>
+                                                <a  className="website-link"  href={"//"+website.domain}>{website.domain.split(".")[1].charAt(0)}</a>
                                             </div>
                                             {/* <p className="mx-auto">{website.domain.split(".")[1]}.{website.domain.split(".")[2]}</p> */}
                                         </div>

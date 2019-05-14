@@ -30,9 +30,13 @@ class SignUp extends Component {
         if (auth.uid) return <Redirect to='/' /> //route guard保证登陆后不会再进入signup页面
 
         return (
-            <div className='container' >
+            <div className='container default-text' >
                 <div className='row  align-items-center' style={{ height: 500 }}>
                     <div className='col-12'>
+                        <div className="row">
+                            <div className="h1_place_holder">
+                            </div>
+                        </div>
                         <div className='row justify-content-center'>
                             <h2 >Sign Up</h2>
                         </div>
@@ -72,7 +76,7 @@ class SignUp extends Component {
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <button type="submit" className="btn btn-outline-info col-sm-4">SIGN UP</button>
+                                    <button type="submit" className="col-12 default-btn" style={{ margin: 30, height: 45 }}>SIGN UP</button>
                                     <div className='red-text center'>
                                         {authError ? <p>{authError}</p> : null}
                                     </div>

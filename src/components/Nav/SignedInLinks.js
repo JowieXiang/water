@@ -11,12 +11,12 @@ const SignedInLinks = (props) => {
     return (
         <ul className='navbar-nav'>
             <li className='nav-item'>
-                <NavLink to={'/personalPage/' + auth.uid} className="nav-link" style={{ color: "#82ca9d" }}>
+                <NavLink to={'/personalPage/' + auth.uid} className="nav-link default-link" title="go to your data dashboard" >
                 Dashboard
                 </NavLink>
             </li>
             <li className='nav-item'>
-                <NavLink to='/logedout' className="nav-link" style={{ color: "#82ca9d" }} onClick={props.signOut}>Log Out
+                <NavLink to='/logedout' className="nav-link default-link"  onClick={props.signOut} title="you will not be able to save websites or view your dashboard when logged out">Log Out
                 </NavLink>
             </li>
         </ul>

@@ -4,17 +4,18 @@ import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 import BeginModal from '../modal/BeginModal'
+import icons from 'glyphicons'
 
 class Navbar extends Component {
-	
-	state={
+
+	state = {
 		showModal: false
 	}
 
-	toggleModal=()=>{
-		const toggle=!this.state.showModal;
+	toggleModal = () => {
+		const toggle = !this.state.showModal;
 		this.setState({
-			showModal:toggle
+			showModal: toggle
 		})
 	}
 
@@ -27,15 +28,16 @@ class Navbar extends Component {
 			<div>
 				<nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)", color: "#82ca9d" }} >
 					<div className='container'>
-						<Link to='/' className='navbar-brand' style={{ color: "#82ca9d" }} href="#">Water.
-					</Link>
+						<Link to='/' className='navbar-brand default-link' href="#">{icons.ferry} Water.
+						</Link>
+						
 						<div className="navbar-collapse justify-content-end" >
 							{links}
 						</div>
-						<button className = "modal-toggle" onClick={this.toggleModal}><strong>?</strong></button>
+						<button className="modal-toggle" onClick={this.toggleModal} title="what is 'water', and how to use it?"><strong>?</strong></button>
 					</div>
 				</nav>
-				{this.state.showModal ?  <BeginModal toggleModal={this.toggleModal}/>: null}
+				{this.state.showModal ? <BeginModal toggleModal={this.toggleModal} /> : null}
 			</div>
 		);
 	}

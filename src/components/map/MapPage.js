@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import MapGL, { Marker, Popup } from 'react-map-gl';
-
+import icons from 'glyphicons'
 import CityPin from './city-pin';
 // import SearchBar from './SearchBar';
 import CityInfo from './city-info';
@@ -204,12 +204,12 @@ class MapPage extends Component {
                 {/* <SearchBar /> */}
 
                 <div className='container' >
-                    <div className="row fixed-bottom align-items-center justify-content-center" style={{ height: 60 }}>
+                    <div className="row fixed-bottom align-items-center justify-content-center" style={{ height: 120 }}>
                         <div className='col-auto'>
-                            <button className='btn btn-outline-success' onClick={this.showMarkers}>show</button>
+                            <button className='show-btn' title="Click to show server locations of all open browser tabs" onClick={this.showMarkers}>{icons.moonFirst}</button>
                         </div>
                         <div className='col-auto'>
-                            {auth.uid ? <button className='btn btn-outline-success' onClick={this.showAndSaveMarkers}>show and save</button> : null}
+                            {auth.uid ? <button className='save-btn' title="Click to show server locations of all open tabs, and save them to your account." onClick={this.showAndSaveMarkers}>{icons.suitHearts}</button> : null}
                         </div>
                     </div>
                 </div>

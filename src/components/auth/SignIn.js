@@ -32,7 +32,7 @@ class SignIn extends Component {
 
         return (
 
-            <div className='container' >
+            <div className='container default-text' >
                 <div className='row  align-items-center' style={{ height: 500 }}>
                     <div className='col-12'>
                         <div className='row justify-content-center'>
@@ -56,10 +56,10 @@ class SignIn extends Component {
                                     </div>
                                 </div>
                                 <div className='form-group row justify-content-center'>
-                                    <button type="submit" className="btn btn-outline-info col-sm-4">Login</button>
-                                    <div className='red-text center'>
-                                        {authError ? <p>{authError}</p> : null}
-                                    </div>
+                                        <button type="submit" className="col-12 default-btn" style={{ margin: 30, height: 45 }}>Login</button>
+                                        <div className='white-text center'>
+                                            {authError ? <p>{authError}</p> : null}
+                                        </div>
                                 </div>
                             </form>
                         </div>
