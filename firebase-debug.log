@@ -1,0 +1,52 @@
+[debug] [2019-05-14T03:34:29.274Z] ----------------------------------------------------------------------
+[debug] [2019-05-14T03:34:29.278Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2019-05-14T03:34:29.278Z] CLI Version:   6.9.2
+[debug] [2019-05-14T03:34:29.278Z] Platform:      win32
+[debug] [2019-05-14T03:34:29.278Z] Node Version:  v10.15.0
+[debug] [2019-05-14T03:34:29.282Z] Time:          Tue May 14 2019 11:34:29 GMT+0800 (GMT+08:00)
+[debug] [2019-05-14T03:34:29.282Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=837578060&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2019-05-14T03:35:10.572Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+
+[debug] [2019-05-14T03:35:31.604Z] Token Fetch Error: Error
+    at new FirebaseError (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\lib\error.js:9:18)
+    at Request._callback (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:30:31)
+    at self.callback (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:182:13)
+    at Request.EventEmitter.emit (domain.js:441:20)
+    at Request.onRequestError (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:881:8)
+    at ClientRequest.emit (events.js:182:13)
+    at ClientRequest.EventEmitter.emit (domain.js:441:20)
+    at TLSSocket.socketErrorListener (_http_client.js:392:9)
+    at TLSSocket.emit (events.js:182:13)
+[debug] [2019-05-14T03:35:54.071Z] ----------------------------------------------------------------------
+[debug] [2019-05-14T03:35:54.075Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2019-05-14T03:35:54.075Z] CLI Version:   6.9.2
+[debug] [2019-05-14T03:35:54.075Z] Platform:      win32
+[debug] [2019-05-14T03:35:54.075Z] Node Version:  v10.15.0
+[debug] [2019-05-14T03:35:54.079Z] Time:          Tue May 14 2019 11:35:54 GMT+0800 (GMT+08:00)
+[debug] [2019-05-14T03:35:54.080Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=258538701&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2019-05-14T03:36:07.706Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+
+[debug] [2019-05-14T03:36:28.782Z] Token Fetch Error: Error
+    at new FirebaseError (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\lib\error.js:9:18)
+    at Request._callback (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:30:31)
+    at self.callback (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:182:13)
+    at Request.EventEmitter.emit (domain.js:441:20)
+    at Request.onRequestError (C:\Users\Zhang Yuxiang\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:881:8)
+    at ClientRequest.emit (events.js:182:13)
+    at ClientRequest.EventEmitter.emit (domain.js:441:20)
+    at TLSSocket.socketErrorListener (_http_client.js:392:9)
+    at TLSSocket.emit (events.js:182:13)

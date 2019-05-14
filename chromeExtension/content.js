@@ -1,4 +1,4 @@
-console.log('Ooooooops!');
+// console.log('Ooooooops!');
 
 //find the 'showMarkers' button and set the listener to showMarkers function
 

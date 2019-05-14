@@ -2,7 +2,7 @@
 let tabList = [];
 let tabItem = {};
 let homePageTab = -1;//存储homepage的tabId
-const homeUrl = 'http://localhost:3000/'; // homepage地址
+const homeUrl = 'https://howsthewater.netlify.com/'; // homepage地址
 
 
 //每次网页加载时将tabItem载入tabList
@@ -36,7 +36,7 @@ chrome.webRequest.onCompleted.addListener((details) => {
 
 //每次网页关闭时将ip移出ipList
 chrome.tabs.onRemoved.addListener((tabId, removeInfo) => {
-
+	
 	//更新homepage tab
 	if (tabId == homePageTab) {
 		homePageTab = -1;
@@ -60,6 +60,7 @@ chrome.tabs.onUpdated.addListener((tab) => {
 	// chrome.tabs.query({windowId: chrome.windows.WINDOW_ID_CURRENT}, (tabs)=>{
 	// 	console.log(tabs);
 	// })
+	// console.log("background.js saying hello")
 	sendMessage();
 
 })

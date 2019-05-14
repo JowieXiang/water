@@ -34,7 +34,7 @@ class Navbar extends Component {
 						<div className="navbar-collapse justify-content-end" >
 							{links}
 						</div>
-						<button className="modal-toggle" onClick={this.toggleModal} title="what is 'water', and how to use it?"><strong>?</strong></button>
+						<button className="modal-toggle" onClick={this.toggleModal} title="how to use 'water'?"><strong>?</strong></button>
 					</div>
 				</nav>
 				{this.state.showModal ? <BeginModal toggleModal={this.toggleModal} /> : null}

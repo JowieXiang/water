@@ -72,7 +72,7 @@ class MapPage extends Component {
             for (let dt of data) {
                 var ip = dt.ip;
                 var domain = dt.domain;
-                fetch('http://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
+                fetch('https://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
                     .then((response) => {
                         return response.json();
                     })
@@ -123,7 +123,7 @@ class MapPage extends Component {
                 var counter = 0;
                 var ip = dt.ip;
                 var domain = dt.domain;
-                fetch('http://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
+                fetch('https://api.db-ip.com/v2/c6298bc05eb5755d421054fc903f1c3069b303fa/' + ip)
                     .then((response) => {
                         return response.json();
                     })
