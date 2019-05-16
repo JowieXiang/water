@@ -9,6 +9,8 @@ import MapPage from './components/map/MapPage'
 import SearchPage from './components/search/SearchPage'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
+import GuidePage from './components/guide/GuidePage'
+
 import LoggedOut from './components/auth/LoggedOut';
 
 
@@ -30,6 +32,8 @@ class App extends Component {
             <Route path="/friendPage" component={FriendPage} />
             <Route path="/websitePage" component={WebsitePage} />
             <Route path="/SearchPage/:search_content" component={SearchPage} />
+            <Route path="/guide" component={GuidePage} />
+
           </Switch>
         </div>
       </BrowserRouter>

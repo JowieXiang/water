@@ -7,15 +7,15 @@ import { Redirect } from 'react-router-dom'
 const LoggedOut = (props) => {
     setTimeout(() => {
         props.history.push('/')
-    }, 4000)
+    }, 2000)
     return (
         <div className='container' >
             <div className='col-12'>
-                <div className='row justify-content-center align-items-center' style={{ height: 500 }}>
-                    <p >
+                <div className='row justify-content-center align-items-center green' style={{ height: 500 }}>
+                    <h5 >
                         You are now logged out<br />
                         redirecting back to main page...
-            </p>
+            </h5>
                 </div>
             </div>
         </div>

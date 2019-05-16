@@ -10,7 +10,7 @@ import WelcomeBoard from './boards//welcome/WelcomeBoard'
 // import WebsiteList from './websites/WebsiteList'
 import Sidebar from './Sidebar';
 import { Redirect, Route, Switch } from 'react-router-dom'
-import Footer from './footer'
+import Footer from '../footer/footer'
 
 class PersonalPage extends Component {
 
