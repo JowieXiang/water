@@ -1,7 +1,7 @@
 {
 	"manifest_version":2,
-	"name":"Internet Awareness Collector",
-	"version":"2.0",
+	"name":"Water Engine",
+	"version":"1.0",
 	"permissions":[
 		"webRequest",
 		"<all_urls>",
@@ -10,7 +10,7 @@
 	"content_scripts":[
 		{
 			"matches":[
-				"<all_urls>"
+				"https://howsthewater.netlify.com/"
 			],
 			"js":[
 				"content.js"
@@ -21,7 +21,7 @@
 		"scripts":["background.js"]
 	},
 	"browser_action":{
-		"default_icon":"icon.png"
+		"default_icon":"water128.png"
 	}
 
 }
